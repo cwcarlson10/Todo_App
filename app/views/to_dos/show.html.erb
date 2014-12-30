@@ -1,0 +1,7 @@
+<h1>To Do Items</h1>
+<h2><%= @todo.title %></h2>
+<h3><%= @todo.category %></h3>
+<p><%= @todo.priority %></p>
+<p><%= @todo.is_completed %></p>
+<%= link_to 'Back', root_path %>
+<%= link_to 'Edit', edit_to_do_path %>

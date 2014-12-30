@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><h1>To Do List</h1></title>
+</head>
+<body>
+	
+	<h1>To Do List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Task Title</th>
+				<th>Category</th>
+				<th>Priority</th>
+				<th>Status</th>
+				<th colspan="4"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+		  <% @todos.each do |task| %>
+		  <tr>
+			  <td><%= task.title %></td>
+			  
+				<td><%= task.category %></td>	
+			  <td><%= task.priority %></td>	
+			  <td><%= task.is_completed %></td>	
+			  <td><button type="button" class="btn btn-info"><%= link_to 'Show ToDos', to_do_path(task.id) %></button>	</td>	
+			  <td><button type="button" class="btn btn-warning"><%= link_to 'Delete', to_do_path(task.id), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+				</tr>
+		  <% end %>
+    </tbody>
+  
+  <%= link_to 'New Task', new_to_do_path %>
+</body>
+</html>
+
+
